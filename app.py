@@ -6,6 +6,10 @@ from pydantic import BaseModel
 import google.generativeai as genai
 import os
 from typing import Optional
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = FastAPI(title="Gemini 3 Hackathon API", version="1.0.0")
 
@@ -46,17 +50,20 @@ async def chat_with_gemini(chat_message: ChatMessage):
     Showcases multimodal reasoning and reduced latency
     """
     try:
-        if not chat_message.api_key:
+        # Use provided API key or fallback to environment variable
+        api_key = chat_message.api_key or os.getenv("GEMINI_API_KEY")
+        
+        if not api_key:
             return ChatResponse(
                 response="Please provide a valid Gemini API key to use the chat feature.",
                 status="error"
             )
         
         # Configure Gemini API
-        genai.configure(api_key=chat_message.api_key)
+        genai.configure(api_key=api_key)
         
-        # Use Gemini 3 model for optimal performance
-        model = genai.GenerativeModel('gemini-pro')
+        # Use Gemini 3 Flash Preview model (latest for hackathon)
+        model = genai.GenerativeModel('gemini-3-flash-preview')
         
         # Generate response with enhanced prompt for social good context
         enhanced_prompt = f"""

@@ -3,7 +3,7 @@
 ## Overview
 This project is built for the Gemini 3 Hackathon hosted by Google DeepMind & Devpost.
 
-**🌐 Live Demo:** [https://arnabsen08.github.io/gemini3-hackathon](https://arnabsen08.github.io/gemini3-hackathon)
+**🌐 Live Demo:** [https://arnabsen08.github.io/gemini3-hackathon](https://arnabsen08.github.io/gemini3-hackathon) ✅ **LIVE**
 
 ### Features
 - Uses Gemini 3 API for multimodal reasoning and reduced latency
