@@ -12,9 +12,10 @@ load_dotenv()
 def test_direct_api():
     """Test Gemini API directly with HTTP requests"""
     
-    api_key = os.getenv("GEMINI_API_KEY")
+    api_key = input("Enter your Gemini API key: ").strip()
     if not api_key:
-        print("❌ No API key found")
+        print("❌ No API key provided")
+        print("🔑 Get your free API key from: https://makersuite.google.com/app/apikey")
         return False
     
     # Try the direct REST API approach with Gemini 3 Flash Preview

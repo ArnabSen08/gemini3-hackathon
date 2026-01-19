@@ -50,12 +50,12 @@ async def chat_with_gemini(chat_message: ChatMessage):
     Showcases multimodal reasoning and reduced latency
     """
     try:
-        # Use provided API key or fallback to environment variable
-        api_key = chat_message.api_key or os.getenv("GEMINI_API_KEY")
+        # Use provided API key (user must provide their own)
+        api_key = chat_message.api_key
         
         if not api_key:
             return ChatResponse(
-                response="Please provide a valid Gemini API key to use the chat feature.",
+                response="Please provide your Gemini API key to use the chat feature. Get your free API key from Google AI Studio: https://makersuite.google.com/app/apikey",
                 status="error"
             )
         

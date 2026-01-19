@@ -13,7 +13,7 @@
 ### Screenshot 2: Chat Interaction
 **What to capture**: Active conversation with Gemini 3
 **Steps**:
-1. Enter your API key: `AIzaSyB5nLD-VXEqP6-DwDyi9nxvk_iqCsElVsg`
+1. Enter your API key from Google AI Studio: https://makersuite.google.com/app/apikey
 2. Ask: "How can AI help with education accessibility?"
 3. Wait for full response
 4. Take screenshot showing both question and answer
@@ -57,9 +57,8 @@ python run_demo.py
 ```
 
 ### Test API Key:
-```
-AIzaSyB5nLD-VXEqP6-DwDyi9nxvk_iqCsElVsg
-```
+**Users must provide their own API key from Google AI Studio**
+Get your free API key: https://makersuite.google.com/app/apikey
 
 ### Sample Questions for Screenshots:
 - "How can AI help with education accessibility?"

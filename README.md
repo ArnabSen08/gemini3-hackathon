@@ -39,7 +39,10 @@ python run_demo.py
 ### 2. Get Your API Key
 1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
 2. Create a new API key
-3. Use it in the web interface or set as environment variable
+3. **For local development**: Copy `.env.example` to `.env` and add your key
+4. **For web demo**: Enter your API key directly in the interface
+
+**🔐 Security Note**: No API keys are stored in the repository. Users must provide their own keys.
 
 ### 3. Try the Live Demo
 Visit the [GitHub Pages demo](https://arnabsen08.github.io/gemini3-hackathon) and enter your API key to experience the full Gemini 3 integration.

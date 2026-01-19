@@ -16,10 +16,11 @@ def test_gemini_integration():
     print("🧪 Testing Gemini API Integration...")
     print("=" * 50)
     
-    # Get API key
-    api_key = os.getenv("GEMINI_API_KEY")
+    # Get API key from user input (no default API key for security)
+    api_key = input("Enter your Gemini API key: ").strip()
     if not api_key:
-        print("❌ Error: GEMINI_API_KEY not found in environment variables")
+        print("❌ Error: No API key provided")
+        print("🔑 Get your free API key from: https://makersuite.google.com/app/apikey")
         return False
     
     try:
