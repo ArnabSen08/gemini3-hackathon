@@ -38,8 +38,8 @@ function sendMessage() {
 async function callGeminiAPI(message, apiKey) {
     try {
         // Note: In a production app, API calls should go through your backend for security
-        // This is a simplified demo implementation
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`, {
+        // This is a simplified demo implementation using the working model
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -47,7 +47,11 @@ async function callGeminiAPI(message, apiKey) {
             body: JSON.stringify({
                 contents: [{
                     parts: [{
-                        text: message
+                        text: `You are an AI assistant built for social good as part of the Gemini 3 Hackathon. Your responses should be helpful, ethical, and focused on positive impact.
+
+User message: ${message}
+
+Please provide a thoughtful and helpful response.`
                     }]
                 }]
             })
@@ -151,6 +155,6 @@ document.getElementById('userInput').addEventListener('keypress', function(e) {
 // Initialize with welcome message
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
-        addMessageToChat('ai', 'Welcome! I\'m your Gemini 3 AI assistant. How can I help you today?');
+        addMessageToChat('ai', 'Welcome! I\'m your Gemini 3 AI assistant built for social good. How can I help you make a positive impact today?');
     }, 1000);
 });
